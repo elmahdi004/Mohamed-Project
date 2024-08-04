@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use Spatie\FlareClient\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/{page}', [AdminController::class,'index']);
+// Route::get('/pdf',function(){
+//     return view('templates.attestation-didentite-modele-1');
+// });
