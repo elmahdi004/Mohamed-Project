@@ -65,7 +65,7 @@
                                                         <button data-toggle="dropdown" class="btn btn-primary btn-sm btn-block d-flex justify-content-center align-items-center">ACTIONS<i class="icon ion-ios-arrow-down mx-1 tx-11 mg-l-3"></i></button>
                                                         <div  class="dropdown-menu tx-13">
                                                             <a href="" class="dropdown-item">Print</a>
-                                                            <a href="" class="dropdown-item">Afficher</a>
+                                                            <a href="{{route('attestation_didentile.show-pdf',['id'=>5])}}" class="dropdown-item">Afficher</a>
                                                             <a href="" class="dropdown-item">Edit</a>
                                                             <a href="" class="dropdown-item">Delete</a>
                                                         </div>
