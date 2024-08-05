@@ -21,7 +21,7 @@ class AttestationDidentileController extends Controller
      */
     public function create()
     {
-        //
+        return view('add-attestation-didentile');
     }
 
     /**

@@ -31,9 +31,9 @@
 								<div class="d-flex justify-content-between">
                                     <div>
                                         <h6 class="card-title mb-1">Tableau des attestations didentile</h6>
-                                        <p class="text-muted mb-2 card-sub-title">The world’s most popular and easiest to use icon set just got an upgrade. More icons, More styles, More</p>
+                                        {{-- <p class="text-muted mb-2 card-sub-title">The world’s most popular and easiest to use icon set just got an upgrade. More icons, More styles, More</p> --}}
                                     </div>
-                                        <div class="col-sm-6 col-md-3 mg-t-10 mg-md-t-0"><button class="btn btn-success btn-with-icon btn-block"><i class="typcn typcn-edit"></i> Ajouter</button></div>
+                                        <div class="col-sm-6 col-md-3 mg-t-10 mg-md-t-0"><a href="{{route('attestation-didentile.create')}}" class="btn btn-success btn-with-icon btn-block text-white"><i class="typcn typcn-edit mx-1"></i> Ajouter</a></div>
 								</div>
                                 <div class="table-responsive">
 									<table class="table text-md-nowrap" id="example1">
@@ -54,7 +54,7 @@
                                             @foreach ($attestations as $attestation)
 											<tr>
 												<td>{{$attestation->nom_prenom}}</td>
-												<td>{{$attestation->date_de_naissance}} à {{$attestation->date_de_naissance}}</td>
+												<td>{{$attestation->date_de_naissance}} à {{$attestation->place_de_naissance}}</td>
 												<td>{{$attestation->num_registre_national}}</td>
 												<td>{{$attestation->domicilie}}</td>
 												<td>{{$attestation->tel}}</td>
