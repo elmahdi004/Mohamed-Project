@@ -12,7 +12,8 @@ class AttestationDidentileController extends Controller
      */
     public function index()
     {
-        //
+        $attestations = AttestationDidentile::all();
+        return view('attestation-didentile',['attestations'=>$attestations]);
     }
 
     /**
@@ -28,7 +29,9 @@ class AttestationDidentileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attestations = AttestationDidentile::all();
+        AttestationDidentile::create($request->all());
+        return view('attestation-didentile',['attestations'=>$attestations]);
     }
 
     /**
@@ -63,6 +66,11 @@ class AttestationDidentileController extends Controller
         //
     }
     public function afficher_pdf($id){
-        return view('templates.attestation-didentite-modele-1');
+        $attestation = AttestationDidentile::find($id);
+        return view('templates.attestation-didentite-modele-1',['attestation'=>$attestation]);
+    }
+    public function print($id){
+        $attestation = AttestationDidentile::find($id);
+        return view('attestation-didentile-print',['attestation'=>$attestation]);
     }
 }

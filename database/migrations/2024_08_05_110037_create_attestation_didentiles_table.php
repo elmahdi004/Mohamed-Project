@@ -23,7 +23,7 @@ return new class extends Migration
         Schema::create('attestation_didentiles', function (Blueprint $table) {
             $table->id();
             $table->string('nom_prenom')->nullable();
-            $table->string('date_de_naissance')->nullable();
+            $table->date('date_de_naissance')->nullable();
             $table->string('place_de_naissance')->nullable();
             $table->string('num_registre_national')->nullable();
             $table->string('domicilie')->nullable();
@@ -37,7 +37,7 @@ return new class extends Migration
             $table->boolean('transfert')->default(0);
             $table->boolean('autre_modification')->default(0);
             $table->string('autre_modification_value')->nullable();
-            $table->timestamp('en_date_du')->nullable();
+            $table->date('en_date_du')->nullable();
             $table->timestamps();
         });
     }
