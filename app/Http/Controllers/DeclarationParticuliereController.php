@@ -12,7 +12,7 @@ class DeclarationParticuliereController extends Controller
      */
     public function index()
     {
-        return view('templates.declaration-particuliere');
+        return view('declaration-particuliere');
     }
 
     /**
