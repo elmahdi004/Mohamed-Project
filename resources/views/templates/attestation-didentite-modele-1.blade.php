@@ -4,7 +4,12 @@
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 <link rel="stylesheet" href="/style1/style.css">
-
+<style>
+      input[type="checkbox"] {
+      transform: scale(2.5); /* Adjust the scale as needed */
+      -webkit-transform: scale(2.5); /* For Safari */
+    }
+</style>
 <script>
 
 </script>
@@ -33,23 +38,23 @@
 </div><div class="c x1 yf w5 hb"><div class="t m0 x0 ha ye ff1 fs1 fc0 sc0 ls0 ws0"> </div></div><div class="c x5 yf w6 hb"><div class="t m0 x0 ha ye ff1 fs1 fc0 sc0 ls0 ws0"> </div><div class="t m0 x0 ha y10 ff1 fs1 fc0 sc0 ls0 ws0"><span class="fc2 sc0"> </span></div><div class="t m0 x0 ha y11 ff1 fs1 fc0 sc0 ls0 ws0"><span class="fc2 sc0"> </span></div>
 <div class="t m0 x0 ha y12 ff1 fs1 fc0 sc0 ls0 ws0"><span class="fc2 sc0"> </span></div></div><div class="c x0 y0 w2 h0"><div class="t m0 x6 h6 y13 ff3 fs3 fc0 sc0 ls0 ws0">Attestation d’identité<span class="ff2"> </span>pour le dépôt d’un acte de personne morale<span class="ff2"> modèle 1* </span></div>
 <div class="t m0 x7 h3 y14 ff3 fs1 fc0 sc0 ls0 ws0">*Le modèle 1 est destiné à l’usage des particuliers et des <span class="ff2">mandataires professionnels no<span class="_ _0"></span>n-agréé<span class="_ _1"></span>s </span></div>
-<div class="t m0 x8 h3 y15 ff2 fs1 fc0 sc0 ls0 ws0">(veuillez fournir une copie recto-<span class="ff3">verso de votre carte d’identité)</span> </div><div class="t m0 x1 hc y16 ff1 fs3 fc0 sc0 ls0 ws0"> </div><div class="t m0 x1 hc y17 ff1 fs3 fc0 sc0 ls0 ws0">Je soussigné(e) Madame <span class="ff4">/Monsieur………………………………………………………………………………………<span class="_ _1"></span></span> </div><div class="t m0 x1 hc y18 ff4 fs3 fc0 sc0 ls0 ws0">né(e) le …………………………………….à…………………………………..<span class="_ _1"></span><span class="ff1"> </span></div><div class="t m0 x1 hc y19 ff1 fs3 fc0 sc0 ls0 ws0">n° de registre national <span class="ff4">:…………………….</span>-<span class="ff4">……………</span>-<span class="ff4">…………...</span>. </div>
-<div class="t m0 x1 hc y1a ff4 fs3 fc0 sc0 ls0 ws0">domicilié(e) à ………………………………………………………………….<span class="ff1"> </span></div>
-<div class="t m0 x1 hc y1b ff1 fs3 fc0 sc0 ls0 ws0">numéro de téléphone <span class="ff4">:……………………………………………………</span> </div>
+<div class="t m0 x8 h3 y15 ff2 fs1 fc0 sc0 ls0 ws0">(veuillez fournir une copie recto-<span class="ff3">verso de votre carte d’identité)</span> </div><div class="t m0 x1 hc y16 ff1 fs3 fc0 sc0 ls0 ws0"> </div><div class="t m0 x1 hc y17 ff1 fs3 fc0 sc0 ls0 ws0">Je soussigné(e) Madame <span class="ff4">/Monsieur : El mahdi Bellaziz<span class="_ _1"></span></span> </div><div class="t m0 x1 hc y18 ff4 fs3 fc0 sc0 ls0 ws0">né(e) le : 28/06/2004 à Safi<span class="_ _1"></span><span class="ff1"> </span></div><div class="t m0 x1 hc y19 ff1 fs3 fc0 sc0 ls0 ws0">n° de registre national : <span class="ff4">HH333N</span></div>
+<div class="t m0 x1 hc y1a ff4 fs3 fc0 sc0 ls0 ws0">domicilié(e) à LLM Society<span class="ff1"> </span></div>
+<div class="t m0 x1 hc y1b ff1 fs3 fc0 sc0 ls0 ws0">numéro de téléphone <span class="ff4">: +212619664459</span> </div>
 <div class="t m0 x1 hc y1c ff1 fs3 fc0 sc0 ls0 ws0">agissant pour la société</div></div>
 <div class="c x0 y0 w7 h0"><div class="t m0 x9 h4 y1d ff1 fs2 fc0 sc0 ls0 ws0">1</div></div>
-<div class="c x0 y0 w2 h0"><div class="t m0 xa hc y1c ff1 fs3 fc0 sc0 ls0 ws0"> <span class="ff4">……………………………………………</span> </div>
+<div class="c x0 y0 w2 h0"><div class="t m0 xa hc y1c ff1 fs3 fc0 sc0 ls0 ws0"> <span class="ff4">Test test.</span> </div>
 <div class="t m0 x1 hc y1e ff1 fs3 fc0 sc0 ls0 ws0">a<span class="ff4">gissant pour la société ou l’asbl</span></div></div>
 <div class="c x0 y0 w7 h0"><div class="t m0 xb h4 y1f ff1 fs2 fc0 sc0 ls0 ws0">2</div></div>
-<div class="c x0 y0 w2 h0"><div class="t m0 xc hc y1e ff1 fs3 fc0 sc0 ls0 ws0"> <span class="ff4">…………………………………….</span>. </div>
-<div class="t m0 x1 hc y20 ff1 fs3 fc0 sc0 ls0 ws0">en qualité de <span class="ff4">…………………………………………………………………..<span class="_ _1"></span></span> </div>
+<div class="c x0 y0 w2 h0"><div class="t m0 xc hc y1e ff1 fs3 fc0 sc0 ls0 ws0"> <span class="ff4">Test test</span>. </div>
+<div class="t m0 x1 hc y20 ff1 fs3 fc0 sc0 ls0 ws0">en qualité de <span class="ff4">test test test.<span class="_ _1"></span></span> </div>
 <div class="t m0 x1 hc y21 ff1 fs3 fc0 sc0 ls0 ws0">atteste déposer les actes visant à un(e) ou plusieurs : </div>
-<div class="t m0 xd hc y22 ff5 fs3 fc0 sc0 ls0 ws0">□<span class="ff6"> <span class="_ _2"> </span><span class="ff1">Constitution </span></span></div>
-<div class="t m0 xd hc y23 ff5 fs3 fc0 sc0 ls0 ws0">□<span class="ff6"> <span class="_ _2"> </span><span class="ff1">Nomination(s) </span></span></div>
-<div class="t m0 xd hc y24 ff5 fs3 fc0 sc0 ls0 ws0">□<span class="ff6"> <span class="_ _2"> </span><span class="ff1">Démission(s) </span></span></div>
-<div class="t m0 xd hc y25 ff5 fs3 fc0 sc0 ls0 ws0">□<span class="ff6"> <span class="_ _2"> </span><span class="ff1">Transfert de siège social </span></span></div>
-<div class="t m0 xd hc y26 ff5 fs3 fc0 sc0 ls0 ws0">□<span class="ff6"> <span class="_ _2"> </span><span class="ff1">Autres modifications : <span class="ff4">…………………………………………</span> </span></span></div><div class="t m0 x1 hc y27 ff1 fs3 fc0 sc0 ls0 ws0"> </div>
-<div class="t m0 x1 hc y28 ff4 fs3 fc0 sc0 ls0 ws0">en date du …../…../………….<span class="ff1"> </span></div>
+<div class="t m0 xd hc y22 ff5 fs3 fc0 sc0 ls0 ws0">☑<span class="ff6"> <span class="_ _2"> </span><span class="ff1">Constitution </span></span></div>
+<div class="t m0 xd hc y23 ff5 fs3 fc0 sc0 ls0 ws0">☐<span class="ff6"> <span class="_ _2"> </span><span class="ff1">Nomination(s) </span></span></div>
+<div class="t m0 xd hc y24 ff5 fs3 fc0 sc0 ls0 ws0">☑<span class="ff6"> <span class="_ _2"> </span><span class="ff1">Démission(s) </span></span></div>
+<div class="t m0 xd hc y25 ff5 fs3 fc0 sc0 ls0 ws0">☐<span class="ff6"> <span class="_ _2"> </span><span class="ff1">Transfert de siège social </span></span></div>
+<div class="t m0 xd hc y26 ff5 fs3 fc0 sc0 ls0 ws0">☑<span class="ff6"> <span class="_ _2"> </span><span class="ff1">Autres modifications : <span class="ff4">autre modification value</span> </span></span></div><div class="t m0 x1 hc y27 ff1 fs3 fc0 sc0 ls0 ws0"> </div>
+<div class="t m0 x1 hc y28 ff4 fs3 fc0 sc0 ls0 ws0">en date du 05/08/2024<span class="ff1"> </span></div>
 <div class="t m0 xe hc y29 ff1 fs3 fc0 sc0 ls0 ws0">Signature </div><div class="t m0 xf h7 y2a ff1 fs4 fc0 sc0 ls0 ws0"> </div></div>
 <div class="c x0 y0 w7 h0"><div class="t m0 x1 hd y2b ff1 fs5 fc0 sc0 ls0 ws0">1</div></div>
 <div class="c x0 y0 w2 h0"><div class="t m0 x10 h2 y2c ff1 fs0 fc0 sc0 ls0 ws0"> <span class="ff4">Veuillez indiquer l’entreprise <span class="_ _1"></span>pour laquelle vous<span class="_ _1"></span> travaillez (bureau comptable XX, fiduciai<span class="_ _1"></span>re XX, société XX)<span class="_ _3"></span></span> </div>
