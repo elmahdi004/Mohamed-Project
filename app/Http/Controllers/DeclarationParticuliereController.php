@@ -76,11 +76,11 @@ class DeclarationParticuliereController extends Controller
         //
     }
     public function afficher_pdf($id){
-        $attestation = DeclarationParticuliere::find($id);
-        return view('templates.attestation-didentite-modele-1',['attestation'=>$attestation]);
+        $declaration = DeclarationParticuliere::where('id',$id)->with('personnes')->first();
+        return view('templates.declaration-particuliere',['declaration'=>$declaration]);
     }
     public function print($id){
-        $attestation = DeclarationParticuliere::find($id);
-        return view('attestation-didentile-print',['attestation'=>$attestation]);
+        $declaration = DeclarationParticuliere::where('id',$id)->with('personnes')->first();
+        return view('declaration-particuliere-print',['declaration'=>$declaration]);
     }
 }
