@@ -33,7 +33,7 @@
                                         <h6 class="card-title mb-1">Tableau des declaration particuliere</h6>
                                         {{-- <p class="text-muted mb-2 card-sub-title">The world’s most popular and easiest to use icon set just got an upgrade. More icons, More styles, More</p> --}}
                                     </div>
-                                        <div class="col-sm-6 col-md-3 mg-t-10 mg-md-t-0"><a href="{{route('attestation-didentile.create')}}" class="btn btn-success btn-with-icon btn-block text-white"><i class="typcn typcn-edit mx-1"></i> Ajouter</a></div>
+                                        <div class="col-sm-6 col-md-3 mg-t-10 mg-md-t-0"><a href="{{route('declaration-particuliere.create')}}" class="btn btn-success btn-with-icon btn-block text-white"><i class="typcn typcn-edit mx-1"></i> Ajouter</a></div>
 								</div>
                                 <div class="table-responsive">
 									<table class="table text-md-nowrap" id="example1">
@@ -48,29 +48,26 @@
 											</tr>
 										</thead>
 										<tbody>
-                                            {{-- @foreach ($attestations as $attestation)
+                                            @foreach ($declarations as $declaration)
 											<tr>
-												<td>{{$attestation->nom_prenom}}</td>
-												<td>{{$attestation->date_de_naissance}} à {{$attestation->place_de_naissance}}</td>
-												<td>{{$attestation->num_registre_national}}</td>
-												<td>{{$attestation->domicilie}}</td>
-												<td>{{$attestation->tel}}</td>
-												<td>{{$attestation->agissant_societe}}</td>
-                                                <td>{{$attestation->agissant_societe_asbl}}</td>
-												<td>{{$attestation->qualite}}</td>
+												<td>{{$declaration->num_entreprise}}</td>
+												<td>{{$declaration->denomation_sociale}}</td>
+												<td>{{$declaration->forme_legale}}</td>
+												<td>{{$declaration->siege_social}}</td>
+												<td>{{$declaration->representer_par}}</td>
 												<td>
                                                     <div class="dropdown">
-                                                        <button data-toggle="dropdown" class="btn btn-primary btn-sm btn-block d-flex justify-content-center align-items-center">ACTIONS<i class="icon ion-ios-arrow-down mx-1 tx-11 mg-l-3"></i></button>
+                                                        <button data-toggle="dropdown" style="max-width: 100px" class="btn btn-primary btn-sm btn-block d-flex justify-content-center align-items-center">ACTIONS<i class="icon ion-ios-arrow-down mx-1 tx-11 mg-l-3"></i></button>
                                                         <div  class="dropdown-menu tx-13">
-                                                            <a href="{{route('attestation_didentile.print-pdf',['id'=>$attestation->id])}}" class="dropdown-item">Print</a>
-                                                            <a href="{{route('attestation_didentile.show-pdf',['id'=>$attestation->id])}}" class="dropdown-item">Afficher</a>
+                                                            <a href="{{route('declaration-particuliere.print-pdf',['id'=>$declaration->id])}}" class="dropdown-item">Print</a>
+                                                            <a href="{{route('declaration-particuliere.show-pdf',['id'=>$declaration->id])}}" class="dropdown-item">Afficher</a>
                                                             <a href="" class="dropdown-item">Edit</a>
                                                             <a href="" class="dropdown-item">Delete</a>
                                                         </div>
                                                     </div>       
                                                 </td>
 											</tr>
-                                            @endforeach --}}
+                                            @endforeach
 										</tbody>
 									</table>
 								</div>

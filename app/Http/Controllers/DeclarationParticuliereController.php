@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DeclarationParticuliere;
+use App\Models\Personne;
 use Illuminate\Http\Request;
 
 class DeclarationParticuliereController extends Controller
@@ -12,7 +13,8 @@ class DeclarationParticuliereController extends Controller
      */
     public function index()
     {
-        return view('declaration-particuliere');
+        $declarations = DeclarationParticuliere::all();
+        return view('declaration-particuliere',['declarations'=>$declarations]);
     }
 
     /**
@@ -20,7 +22,7 @@ class DeclarationParticuliereController extends Controller
      */
     public function create()
     {
-        //
+        return view('add-declaration-particuliere');
     }
 
     /**
@@ -28,7 +30,18 @@ class DeclarationParticuliereController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $declaration = DeclarationParticuliere::create($request->except(['personne']));
+        if($request->personne){
+            foreach($request->personne as $personne){
+                Personne::create([
+                    'declaration_particuliere_id' => $declaration->id,
+                    'nom_prenom_registre' => $personne['nom'],
+                    'qualite' => $personne['qualite'],
+                ]);
+            }
+        }
+        $declarations = DeclarationParticuliere::all();
+        return redirect()->route('declaration-particuliere');
     }
 
     /**
@@ -61,5 +74,13 @@ class DeclarationParticuliereController extends Controller
     public function destroy(DeclarationParticuliere $declarationParticuliere)
     {
         //
+    }
+    public function afficher_pdf($id){
+        $attestation = DeclarationParticuliere::find($id);
+        return view('templates.attestation-didentite-modele-1',['attestation'=>$attestation]);
+    }
+    public function print($id){
+        $attestation = DeclarationParticuliere::find($id);
+        return view('attestation-didentile-print',['attestation'=>$attestation]);
     }
 }

@@ -29,7 +29,15 @@ Route::get('/attestation-didentile/{id}/print',[AttestationDidentileController::
 // Route::resources([
 //     'attestation-didentile' => AttestationDidentileController::class
 // ]);
-Route::get('/declaration-particuliere',[DeclarationParticuliereController::class,'index']);
+
+
+Route::get('/declaration-particuliere',[DeclarationParticuliereController::class,'index'])->name('declaration-particuliere');
+Route::get('/declaration-particuliere/add',[DeclarationParticuliereController::class,'create'])->name('declaration-particuliere.create');
+Route::post('/declaration-particuliere/store',[DeclarationParticuliereController::class,'store'])->name('declaration-particuliere.store');
+Route::get('/declaration-particuliere/{id}/print',[DeclarationParticuliereController::class,'print'])->name('declaration-particuliere.print-pdf');
+Route::get('/declaration-particuliere/{id}',[DeclarationParticuliereController::class,'afficher_pdf'])->name('declaration-particuliere.show-pdf');
+
+
 Route::get('/{page}', [AdminController::class,'index']);
 // Route::get('/pdf',function(){
 //     return view('templates.attestation-didentite-modele-1');
