@@ -40,7 +40,7 @@ Route::post('/declaration-particuliere/store',[DeclarationParticuliereController
 Route::get('/declaration-particuliere/{id}/print',[DeclarationParticuliereController::class,'print'])->name('declaration-particuliere.print-pdf');
 Route::get('/declaration-particuliere/{id}',[DeclarationParticuliereController::class,'afficher_pdf'])->name('declaration-particuliere.show-pdf');
 Route::post('/declaration-particuliere/{id}/update',[DeclarationParticuliereController::class,'update'])->name('declaration-particuliere.update');
-Route::post('/declaration-particuliere/{id}/update-print',[DeclarationParticuliere::class,'updatePrint'])->name('declaration-particuliere.update-print');
+Route::post('/declaration-particuliere/{id}/update-print',[DeclarationParticuliereController::class,'updatePrint'])->name('declaration-particuliere.update-print');
 
 
 Route::get('/formulaire',[Formulaire1Controller::class,'index'])->name('formulaire');

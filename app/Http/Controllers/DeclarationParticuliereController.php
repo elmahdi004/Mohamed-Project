@@ -113,11 +113,43 @@ class DeclarationParticuliereController extends Controller
         //
     }
     public function afficher_pdf($id){
-        $declaration = DeclarationParticuliere::where('id',$id)->with('personnes')->first();
-        return view('templates.declaration-particuliere',['declaration'=>$declaration]);
+        $baseUrl = env("DATA_BE");
+        $headers = [
+            'api_id' => env("API_ID"),
+            'api_key' => env("API_KEY"),
+        ];
+        $response = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
+        return view('templates.declaration-particuliere',['attestation'=>$response]);
     }
     public function print($id){
-        $declaration = DeclarationParticuliere::where('id',$id)->with('personnes')->first();
-        return view('declaration-particuliere-print',['declaration'=>$declaration]);
+        $baseUrl = env("DATA_BE");
+        $headers = [
+            'api_id' => env("API_ID"),
+            'api_key' => env("API_KEY"),
+        ];
+        $response = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
+        return view('declaration-particuliere-print',['attestation'=>$response]);
+    }
+    public function updatePrint(Request $request,$id){
+        $baseUrl = env("DATA_BE");
+        $headers = [
+            'api_id' => env("API_ID"),
+            'api_key' => env("API_KEY"),
+        ];
+        $responseBeforeEdited = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
+        $responseBeforeEdited["identifier"] = isset($request->num_entreprise) ? $request->num_entreprise : null;
+        $responseBeforeEdited['denomination'] = isset($request->denomation_sociale) ? $request->denomation_sociale : null;
+        $responseBeforeEdited["juridical_form"]['code'] = isset($request->forme_legale) ? $request->forme_legale : null;
+        $responseBeforeEdited["juridical_situation"]['code'] = isset($request->siege_social) ? $request->siege_social : null;
+        $responseBeforeEdited["company_name"] = isset($request->representer_par) ? $request->representer_par : null;
+        $responseBeforeEdited["fait_a"] = isset($request->fait_a) ? $request->fait_a : null;
+        $responseBeforeEdited["en_date_du"] = isset($request->en_date_du) ? $request->en_date_du : null;
+        $responseBeforeEdited["personnes"][0]['nom_prenom_registre'] = isset($request->personne[0]['nom']) ? $request->personne[0]['nom'] : null;
+        $responseBeforeEdited["personnes"][0]['qualite'] = isset($request->personne[0]['qualite']) ? $request->personne[0]['qualite'] : null;
+        $responseBeforeEdited["personnes"][1]['nom_prenom_registre'] = isset($request->personne[1]['nom']) ? $request->personne[1]['nom'] : null;
+        $responseBeforeEdited["personnes"][1]['qualite'] = isset($request->personne[1]['qualite']) ? $request->personne[1]['qualite'] : null;
+        $responseBeforeEdited["personnes"][2]['nom_prenom_registre'] = isset($request->personne[2]['nom']) ? $request->personne[2]['nom'] : null;
+        $responseBeforeEdited["personnes"][2]['qualite'] = isset($request->personne[2]['qualite']) ? $request->personne[2]['qualite'] : null;
+        return view('declaration-particuliere-print',['attestation'=>$responseBeforeEdited]);
     }
 }
