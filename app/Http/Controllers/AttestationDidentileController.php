@@ -82,11 +82,21 @@ class AttestationDidentileController extends Controller
         //
     }
     public function afficher_pdf($id){
-        $attestation = AttestationDidentile::find($id);
-        return view('templates.attestation-didentite-modele-1',['attestation'=>$attestation]);
+        $baseUrl = env("DATA_BE");
+        $headers = [
+            'api_id' => env("API_ID"),
+            'api_key' => env("API_KEY"),
+        ];
+        $response = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
+        return view('templates.attestation-didentite-modele-1',['attestation'=>$response]);
     }
     public function print($id){
-        $attestation = AttestationDidentile::find($id);
-        return view('attestation-didentile-print',['attestation'=>$attestation]);
+        $baseUrl = env("DATA_BE");
+        $headers = [
+            'api_id' => env("API_ID"),
+            'api_key' => env("API_KEY"),
+        ];
+        $response = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
+        return view('attestation-didentile-print',['attestation'=>$response]);
     }
 }
