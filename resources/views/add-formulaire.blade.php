@@ -15,7 +15,7 @@
 				<div class="breadcrumb-header justify-content-between">
 					<div class="my-auto">
 						<div class="d-flex">
-							<h4 class="content-title mb-0 my-auto">Ajouter une Attestation Didentile</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ tableau de bord</span>
+							<h4 class="content-title mb-0 my-auto">Modifier Formulaire 1</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ tableau de bord</span>
 						</div>
 					</div>
 					
@@ -29,79 +29,168 @@
                                 <div class="col-lg-12 col-md-12">
                                 <form action="">
 								<div id="wizard1">
-									<h3>Personal Information</h3>
+									<h3>Volet A</h3>
 									<section>
-										<div class="control-group form-group">
-											<label class="form-label">Name</label>
-											<input type="text" class="form-control required" placeholder="Name">
-										</div>
-										<div class="control-group form-group">
-											<label class="form-label">Email</label>
-											<input type="email" class="form-control required" placeholder="Email Address">
-										</div>
-										<div class="control-group form-group">
-											<label class="form-label">Phone Number</label>
-											<input type="number" class="form-control required" placeholder="Number">
-										</div>
-										<div class="control-group form-group mb-0">
-											<label class="form-label">Address</label>
-											<input type="text" class="form-control required" placeholder="Address">
-										</div>
-									</section>
-									<h3>Billing Information</h3>
-									<section>
-										<div class="table-responsive mg-t-20">
-											<table class="table table-bordered">
-												<tbody>
-													<tr>
-														<td>Cart Subtotal</td>
-														<td class="text-right">$792.00</td>
-													</tr>
-													<tr>
-														<td><span>Totals</span></td>
-														<td class="text-right text-muted"><span>$792.00</span></td>
-													</tr>
-													<tr>
-														<td><span>Order Total</span></td>
-														<td><h2 class="price text-right mb-0">$792.00</h2></td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
-									</section>
-									<h3>Payment Details</h3>
-									<section>
-										<div class="form-group">
-											<label class="form-label" >CardHolder Name</label>
-											<input type="text" class="form-control" id="name1" placeholder="First Name">
-										</div>
-										<div class="form-group">
-											<label class="form-label">Card number</label>
-											<div class="input-group">
-												<input type="text" class="form-control" placeholder="Search for...">
-												<span class="input-group-append">
-													<button class="btn btn-info" type="button"><i class="fab fa-cc-visa"></i> &nbsp; <i class="fab fa-cc-amex"></i> &nbsp;
-													<i class="fab fa-cc-mastercard"></i></button>
-												</span>
-											</div>
-										</div>
 										<div class="row">
-											<div class="col-sm-8">
-												<div class="form-group mb-sm-0">
-													<label class="form-label">Expiration</label>
-													<div class="input-group">
-														<input type="number" class="form-control" placeholder="MM" name="expiremonth">
-														<input type="number" class="form-control" placeholder="YY" name="expireyear">
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-4 ">
-												<div class="form-group mb-0">
-													<label class="form-label">CVV <i class="fa fa-question-circle"></i></label>
-													<input type="number" class="form-control" required="">
-												</div>
-											</div>
-										</div>
+                                            <div class="parsley-input my-2 col-md-12" id="fnWrapper">
+                                                <label>Numéro d’entreprise : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#fnWrapper" name="nom_prenom" placeholder="Entrer le Numéro d’entreprise"  type="text" value="@isset($attestation['num_entreprise']){{$attestation['num_entreprise']}}@endisset">
+                                            </div>
+                                                {{-- <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                    <label>Date de naissance : <span class="tx-danger">*</span></label>
+                                                    <div class="input-group col-md-6">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">
+                                                                <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                                            </div>
+                                                        </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="date" name="date_de_naissance" value="{{ isset($attestation['company_names'][0]['start_date']) ? \Carbon\Carbon::parse($attestation['company_names'][0]['start_date'])->format('Y-m-d') : '' }}">
+                                                </div>                                                            </div> --}}
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Ville : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="place_de_naissance" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Nom : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="nom" placeholder="Entrer le Nom"  type="text" value="{{ isset($attestation['identifier']) ? $attestation['identifier'] : '' }}">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Forme légale : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="forme_legal" placeholder="Entrer la Forme légale"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Numéro de téléphone : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="tel" placeholder="Entrer le numéro de téléphone"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Siège(s) ou succursale : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="siege" placeholder="Siège(s) ou succursale"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-5 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Rue : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="rue" placeholder="Entrer le Rue"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>N° : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="n" placeholder="N°"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-4 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Boîte : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="boite" placeholder="Boîte"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-4 col-md-4 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Code postal : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="code_postal" placeholder="Entrer le Code postal"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-4 col-md-8 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Localité : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="localite" placeholder="Entrer la Localité"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-4 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Pays : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="pays" placeholder="Entrer le Pays"  type="text">
+                                            </div>
+                                            <p class="my-3">Si la constitution est la conséquence d'une fusion/scission (*), indiquer le nom et le numéro d'entreprise des personnes morales fusionnées/scindées (*)</p>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Nom : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="localite" placeholder="Entrer la Localité"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>N° d’entreprise : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="pays" placeholder="Entrer le Pays"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Nom : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="localite" placeholder="Entrer la Localité"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>N° d’entreprise : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="pays" placeholder="Entrer le Pays"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Nom : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="localite" placeholder="Entrer la Localité"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>N° d’entreprise : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="pays" placeholder="Entrer le Pays"  type="text">
+                                            </div>
+                                        </div>
+									</section>
+									<h3>Volet B</h3>
+									<section>
+                                        <div class="row">
+                                            <div class="parsley-input my-2 col-md-12" id="fnWrapper">
+                                                <label>Nom et Prénom : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#fnWrapper" name="nom_prenom" placeholder="Entrer le nom et prénom"  type="text" value="@isset($attestation['company_name']){{$attestation['company_name']}}@endisset">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                    <label>Date de naissance : <span class="tx-danger">*</span></label>
+                                                    <div class="input-group col-md-6">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">
+                                                                <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                                            </div>
+                                                        </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="date" name="date_de_naissance" value="{{ isset($attestation['company_names'][0]['start_date']) ? \Carbon\Carbon::parse($attestation['company_names'][0]['start_date'])->format('Y-m-d') : '' }}">
+                                                </div>                                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Ville : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="place_de_naissance" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>N° de registre national : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="num_registre_national" placeholder="Entrer le n° de registre national"  type="text" value="{{ isset($attestation['identifier']) ? $attestation['identifier'] : '' }}">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Domicilié(e) à : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="domicilie" placeholder="Domicilié(e) à"  type="text">
+                                            </div>
+                                        </div>
+									</section>
+									<h3>Volet C</h3>
+									<section>
+										<div class="row">
+                                            <div class="parsley-input my-2 col-md-12" id="fnWrapper">
+                                                <label>Nom et Prénom : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#fnWrapper" name="nom_prenom" placeholder="Entrer le nom et prénom"  type="text" value="@isset($attestation['company_name']){{$attestation['company_name']}}@endisset">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                    <label>Date de naissance : <span class="tx-danger">*</span></label>
+                                                    <div class="input-group col-md-6">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">
+                                                                <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
+                                                            </div>
+                                                        </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="date" name="date_de_naissance" value="{{ isset($attestation['company_names'][0]['start_date']) ? \Carbon\Carbon::parse($attestation['company_names'][0]['start_date'])->format('Y-m-d') : '' }}">
+                                                </div>                                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Ville : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="place_de_naissance" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>N° de registre national : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="num_registre_national" placeholder="Entrer le n° de registre national"  type="text" value="{{ isset($attestation['identifier']) ? $attestation['identifier'] : '' }}">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Domicilié(e) à : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="domicilie" placeholder="Domicilié(e) à"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Numéro de téléphone : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="tel" placeholder="Entrer le numéro de téléphone"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Agissant pour la société : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="agissant_societe" placeholder="Agissant pour la société"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>Agissant pour la société ou l’asbl : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="agissant_societe_asbl" placeholder="Agissant pour la société ou l’asbl"  type="text">
+                                            </div>
+                                            <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                                <label>En qualité de : <span class="tx-danger">*</span></label>
+                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="qualite" placeholder="En qualité de"  type="text">
+                                            </div>
+                                        </div>
 									</section>
 								</div>
                             </form>
