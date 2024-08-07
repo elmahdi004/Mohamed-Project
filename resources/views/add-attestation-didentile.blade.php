@@ -28,13 +28,13 @@
                                     <div class="col-lg-12 col-md-12">
                                         <div class="card">
                                             <div class="card-body">
-                                                <form action="{{route('attestation-didentile.store')}}" method="POST" class="parsley-style-1" id="selectForm2" name="selectForm2">
+                                                <form  method="POST" class="parsley-style-1" id="selectForm2" name="selectForm2">
                                                     @csrf
                                                     <div class="">
                                                         <div class="row mg-b-20">
                                                             <div class="parsley-input my-2 col-md-12" id="fnWrapper">
                                                                 <label>Nom et Prénom : <span class="tx-danger">*</span></label>
-                                                                <input class="form-control" data-parsley-class-handler="#fnWrapper" name="nom_prenom" placeholder="Entrer le nom et prénom"  type="text">
+                                                                <input class="form-control" data-parsley-class-handler="#fnWrapper" name="nom_prenom" placeholder="Entrer le nom et prénom"  type="text" value="@isset($attestation['company_name']){{$attestation['company_name']}}@endisset">
                                                             </div>
                                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                     <label>Date de naissance : <span class="tx-danger">*</span></label>
@@ -43,15 +43,15 @@
                                                                             <div class="input-group-text">
                                                                                 <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
                                                                             </div>
-                                                                        </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="date" name="date_de_naissance">
+                                                                        </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="date" name="date_de_naissance" value="{{ isset($attestation['company_names'][0]['start_date']) ? \Carbon\Carbon::parse($attestation['company_names'][0]['start_date'])->format('Y-m-d') : '' }}">
                                                                 </div>                                                            </div>
                                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                 <label>Ville : <span class="tx-danger">*</span></label>
-                                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="place_de_naissance" placeholder="Entrer la ville de naissance"  type="text">
+                                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="place_de_naissance" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                                             </div>
                                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                 <label>N° de registre national : <span class="tx-danger">*</span></label>
-                                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="num_registre_national" placeholder="Entrer le n° de registre national"  type="text">
+                                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="num_registre_national" placeholder="Entrer le n° de registre national"  type="text" value="{{ isset($attestation['identifier']) ? $attestation['identifier'] : '' }}">
                                                             </div>
                                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                 <label>Domicilié(e) à : <span class="tx-danger">*</span></label>
@@ -103,7 +103,8 @@
                                                     <!-- parsley-checkbox -->
                                                     <div class="wd-250" id="cbErrorContainer2"></div>
                                                     <div class="mg-t-30">
-                                                        <button class="btn btn-main-primary pd-x-20" type="submit">Ajouter</button>
+                                                        <button class="btn btn-main-primary pd-x-20" formaction="{{route('attestation-didentile.update',['id'=>$id])}}" type="submit">Afficher</button>
+                                                        <button class="btn btn-main-primary pd-x-20" formaction="{{route('attestation-didentile.update-print',['id'=>$id])}}" type="submit">Print</button>
                                                     </div>
                                                 </form>
                                             </div>
