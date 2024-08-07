@@ -33,7 +33,7 @@
                                         <h6 class="card-title mb-1">Tableau de Formulaire 1</h6>
                                         {{-- <p class="text-muted mb-2 card-sub-title">The world’s most popular and easiest to use icon set just got an upgrade. More icons, More styles, More</p> --}}
                                     </div>
-                                        <div class="col-sm-6 col-md-3 mg-t-10 mg-md-t-0"><a href="{{route('declaration-particuliere.create')}}" class="btn btn-success btn-with-icon btn-block text-white"><i class="typcn typcn-edit mx-1"></i> Ajouter</a></div>
+                                        <div class="col-sm-6 col-md-3 mg-t-10 mg-md-t-0"><a href="{{route('formulaire.create')}}" class="btn btn-success btn-with-icon btn-block text-white"><i class="typcn typcn-edit mx-1"></i> Ajouter</a></div>
 								</div>
                                 <div class="table-responsive">
 									<table class="table text-md-nowrap" id="example1">

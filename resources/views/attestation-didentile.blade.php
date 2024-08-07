@@ -53,20 +53,20 @@
 										<tbody>
                                             @foreach ($attestations as $attestation)
 											<tr>
-												<td>{{$attestation->nom_prenom}}</td>
-												<td>{{$attestation->date_de_naissance}} à {{$attestation->place_de_naissance}}</td>
-												<td>{{$attestation->num_registre_national}}</td>
-												<td>{{$attestation->domicilie}}</td>
-												<td>{{$attestation->tel}}</td>
-												<td>{{$attestation->agissant_societe}}</td>
-                                                <td>{{$attestation->agissant_societe_asbl}}</td>
-												<td>{{$attestation->qualite}}</td>
+												<td>{{$attestation["company_name"]}}</td>
+												<td>{{$attestation["type"]["start_date"]}}</td>
+												<td>{{$attestation["identifier"]}}</td>
+												<td>{{$attestation["company_name"]}}</td>
+												<td>{{$attestation["phone_number"]}}</td>
+												<td>{{$attestation["company_name"]}}</td>
+												<td>{{$attestation["company_name"]}}</td>
+												<td>{{$attestation["company_name"]}}</td>
 												<td>
                                                     <div class="dropdown">
                                                         <button data-toggle="dropdown" class="btn btn-primary btn-sm btn-block d-flex justify-content-center align-items-center">ACTIONS<i class="icon ion-ios-arrow-down mx-1 tx-11 mg-l-3"></i></button>
                                                         <div  class="dropdown-menu tx-13">
-                                                            <a href="{{route('attestation_didentile.print-pdf',['id'=>$attestation->id])}}" class="dropdown-item">Print</a>
-                                                            <a href="{{route('attestation_didentile.show-pdf',['id'=>$attestation->id])}}" class="dropdown-item">Afficher</a>
+                                                            <a href="{{route('attestation_didentile.print-pdf',['id'=>$attestation['identifier']])}}" class="dropdown-item">Print</a>
+                                                            <a href="{{route('attestation_didentile.show-pdf',['id'=>$attestation['identifier']])}}" class="dropdown-item">Afficher</a>
                                                             <a href="" class="dropdown-item">Edit</a>
                                                             <a href="" class="dropdown-item">Delete</a>
                                                         </div>

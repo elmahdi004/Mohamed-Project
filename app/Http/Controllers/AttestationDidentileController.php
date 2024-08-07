@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AttestationDidentile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class AttestationDidentileController extends Controller
 {
@@ -12,9 +13,24 @@ class AttestationDidentileController extends Controller
      */
     public function index()
     {
-        $attestations = AttestationDidentile::all();
-        return view('attestation-didentile',['attestations'=>$attestations]);
+        $baseUrl = env("DATA_BE");
+        $headers = [
+            'api_id' => env("API_ID"),
+            'api_key' => env("API_KEY"),
+        ];
+    
+        // Making API requests
+        $response1 = Http::withHeaders($headers)->get("$baseUrl/201552538/info")->json();
+        $response2 = Http::withHeaders($headers)->get("$baseUrl/202239951/info")->json();
+        $response3 = Http::withHeaders($headers)->get("$baseUrl/403170701/info")->json();
+    
+        // Collect responses
+        $data = [$response1, $response2, $response3];
+        // return $data[0];
+        return view('attestation-didentile', ['attestations' => $data]);
     }
+    
+    
 
     /**
      * Show the form for creating a new resource.
