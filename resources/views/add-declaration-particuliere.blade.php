@@ -28,60 +28,60 @@
                                     <div class="col-lg-12 col-md-12">
                                         <div class="card">
                                             <div class="card-body">
-                                                <form action="{{route('declaration-particuliere.store')}}" method="POST" class="parsley-style-1" id="selectForm2" name="selectForm2">
+                                                <form  method="POST" class="parsley-style-1" id="selectForm2" name="selectForm2">
                                                     @csrf
                                                     <div class="">
                                                         <div class="row mg-b-20">
                                                             <div class="parsley-input my-2 col-md-12" id="fnWrapper">
                                                                 <label>Numéro d’entreprise : <span class="tx-danger">*</span></label>
-                                                                <input class="form-control" data-parsley-class-handler="#fnWrapper" name="num_entreprise" placeholder="Entrer le numéro d’entreprise"  type="text">
+                                                                <input class="form-control" data-parsley-class-handler="#fnWrapper" name="num_entreprise" placeholder="Entrer le numéro d’entreprise"  type="text"  value="{{isset($attestation['identifier']) ? $attestation['identifier'] : ''}}">
                                                             </div>
                                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                 <label>Dénomination sociale : <span class="tx-danger">*</span></label>
-                                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="denomation_sociale" placeholder="Entrer la Dénomination sociale"  type="text">
+                                                                <input class="form-control" value="{{isset($attestation['denomination']) ? $attestation['denomination'] : ''}}" data-parsley-class-handler="#lnWrapper" name="denomation_sociale" placeholder="Entrer la Dénomination sociale"  type="text">
                                                             </div>
                                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                 <label>Forme légale : <span class="tx-danger">*</span></label>
-                                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="forme_legale" placeholder="Entrer la forme légale"  type="text">
+                                                                <input class="form-control" value="{{isset($attestation['juridical_form']['code']) ? $attestation['identifier'] : ''}}" data-parsley-class-handler="#lnWrapper" name="forme_legale" placeholder="Entrer la forme légale"  type="text">
                                                             </div>
                                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                 <label>Siège social : <span class="tx-danger">*</span></label>
-                                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="siege_social" placeholder="Entrer le Siège social"  type="text">
+                                                                <input class="form-control" value="{{isset($attestation['juridical_situation']['code']) ? $attestation['juridical_situation']['code'] : ''}}" data-parsley-class-handler="#lnWrapper" name="siege_social" placeholder="Entrer le Siège social"  type="text">
                                                             </div>
                                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                 <label>Représenté par : <span class="tx-danger">*</span></label>
-                                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="representer_par" placeholder="Représenté par"  type="text">
+                                                                <input class="form-control" value="{{isset($attestation['company_name']) ? $attestation['company_name'] : ''}}" data-parsley-class-handler="#lnWrapper" name="representer_par" placeholder="Représenté par"  type="text">
                                                             </div>
                                                             <p class="mg-b-10 mt-5">Déclare/Déclarons, en application de l&#39;article 13 de la loi du 4 mai 2023 relative au Registre
                                                                 central des interdictions de gérer, qu&#39;à l&#39;encontre de la ou des personnes mentionnée(s) ci-
                                                                 dessous :</p>
                                                                 <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                     <label>Nom – Prénom – Numéro de registre national (1) : <span class="tx-danger">*</span></label>
-                                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper" name="personne[0][nom]" placeholder="Nom – Prénom – Numéro de registre national"  type="text">
+                                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper" name="personne[0][nom]"  value="{{isset($attestation['personnes'][0]['nom_prenom_register']) ? $attestation['identifier'] : ''}}" placeholder="Nom – Prénom – Numéro de registre national"  type="text">
                                                                 </div>
                                                                 <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                     <label>Qualité (1) : <span class="tx-danger">*</span></label>
-                                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper" name="personne[0][qualite]" placeholder="Qualité"  type="text">
+                                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper" name="personne[0][qualite]" value="{{isset($attestation['personnes'][0]['qualite']) ? $attestation['identifier'] : ''}}" placeholder="Qualité"  type="text">
                                                                 </div>
                                                                 <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                     <label>Nom – Prénom – Numéro de registre national (2) : <span class="tx-danger">*</span></label>
-                                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper" name="personne[1][nom]" placeholder="Nom – Prénom – Numéro de registre national"  type="text">
+                                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper" name="personne[1][nom]" value="{{isset($attestation['personnes'][1]['nom_prenom_register']) ? $attestation['identifier'] : ''}}" placeholder="Nom – Prénom – Numéro de registre national"  type="text">
                                                                 </div>
                                                                 <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                     <label>Qualité (2) : <span class="tx-danger">*</span></label>
-                                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper" name="personne[1][qualite]" placeholder="Qualité"  type="text">
+                                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper" name="personne[1][qualite]" value="{{isset($attestation['personnes'][1]['qualite']) ? $attestation['identifier'] : ''}}" placeholder="Qualité"  type="text">
                                                                 </div>
                                                                 <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                     <label>Nom – Prénom – Numéro de registre national (3) : <span class="tx-danger">*</span></label>
-                                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper" name="personne[2][nom]" placeholder="Nom – Prénom – Numéro de registre national"  type="text">
+                                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper" name="personne[2][nom]" value="{{isset($attestation['personnes'][2]['nom_prenom_register']) ? $attestation['identifier'] : ''}}" placeholder="Nom – Prénom – Numéro de registre national"  type="text">
                                                                 </div>
                                                                 <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                     <label>Qualité (3) : <span class="tx-danger">*</span></label>
-                                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper" name="personne[2][qualite]" placeholder="Qualité"  type="text">
+                                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper" name="personne[2][qualite]" value="{{isset($attestation['personnes'][2]['qualite']) ? $attestation['identifier'] : ''}}" placeholder="Qualité"  type="text">
                                                                 </div>
                                                                 <div class="parsley-input my-2 mt-3 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                     <label>Fait à : <span class="tx-danger">*</span></label>
-                                                                    <input class="form-control" data-parsley-class-handler="#lnWrapper" name="fait_a" placeholder="Entrer le numéro de téléphone"  type="text">
+                                                                    <input class="form-control" value="{{ isset($attestation['fait_a']) ? $attestation['fait_a'] : '' }}" data-parsley-class-handler="#lnWrapper" name="fait_a" placeholder="Fait à"  type="text">
                                                                 </div>
                                                                 <div class="parsley-input my-2 mt-3 col-md-6 mg-t-20 mg-md-t-0 mt-3" id="lnWrapper">
                                                                     <label>À la date du : <span class="tx-danger">*</span></label>
@@ -90,7 +90,7 @@
                                                                             <div class="input-group-text">
                                                                                 <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
                                                                             </div>
-                                                                        </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="date" name="en_date_du">
+                                                                        </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="date" name="en_date_du" value="{{ isset($attestation['en_date_du']) ? \Carbon\Carbon::parse($attestation['en_date_du'])->format('Y-m-d') : '' }}">
                                                                     </div>
                                                                 </div>
                                                         </div>
@@ -98,8 +98,8 @@
                                                     <!-- parsley-checkbox -->
                                                     <div class="wd-250" id="cbErrorContainer2"></div>
                                                     <div class="mg-t-30">
-                                                        <button class="btn btn-main-primary pd-x-20" type="submit">Ajouter</button>
-                                                    </div>
+                                                        <button class="btn btn-main-primary pd-x-20" formaction="{{route('declaration-particuliere.update',['id'=>$id])}}" type="submit">Afficher</button>
+                                                        <button class="btn btn-main-primary pd-x-20" formaction="{{route('declaration-particuliere.update-print',['id'=>$id])}}" type="submit">Print</button>                                                    </div>
                                                 </form>
                                             </div>
                                         </div>

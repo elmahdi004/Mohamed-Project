@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AttestationDidentileController;
 use App\Http\Controllers\DeclarationParticuliereController;
 use App\Http\Controllers\Formulaire1Controller;
+use App\Models\DeclarationParticuliere;
 use Illuminate\Support\Facades\Route;
 use Spatie\FlareClient\View;
 
@@ -34,10 +35,12 @@ Route::get('/attestation-didentile/{id}/print',[AttestationDidentileController::
 
 
 Route::get('/declaration-particuliere',[DeclarationParticuliereController::class,'index'])->name('declaration-particuliere');
-Route::get('/declaration-particuliere/add',[DeclarationParticuliereController::class,'create'])->name('declaration-particuliere.create');
+Route::get('/declaration-particuliere/{id}/edit',[DeclarationParticuliereController::class,'edit'])->name('declaration-particuliere.edit');
 Route::post('/declaration-particuliere/store',[DeclarationParticuliereController::class,'store'])->name('declaration-particuliere.store');
 Route::get('/declaration-particuliere/{id}/print',[DeclarationParticuliereController::class,'print'])->name('declaration-particuliere.print-pdf');
 Route::get('/declaration-particuliere/{id}',[DeclarationParticuliereController::class,'afficher_pdf'])->name('declaration-particuliere.show-pdf');
+Route::post('/declaration-particuliere/{id}/update',[DeclarationParticuliereController::class,'update'])->name('declaration-particuliere.update');
+Route::post('/declaration-particuliere/{id}/update-print',[DeclarationParticuliere::class,'updatePrint'])->name('declaration-particuliere.update-print');
 
 
 Route::get('/formulaire',[Formulaire1Controller::class,'index'])->name('formulaire');

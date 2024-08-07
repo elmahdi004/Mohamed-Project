@@ -113,7 +113,7 @@ class AttestationDidentileController extends Controller
         $responseBeforeEdited["autre_modification_value"] = isset($request->autre_modification_value) ? $request->autre_modification_value : null;
         $responseBeforeEdited["en_date_du"] = isset($request->en_date_du) ? $request->en_date_du : null;
 
-        return view('templates.attestation-didentite-model-1',['attestation'=>$responseBeforeEdited]);
+        return view('templates.attestation-didentite-modele-1',['attestation'=>$responseBeforeEdited]);
     }
 
     /**
