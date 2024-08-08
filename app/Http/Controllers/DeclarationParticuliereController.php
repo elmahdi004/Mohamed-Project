@@ -67,15 +67,15 @@ class DeclarationParticuliereController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
         $baseUrl = env("DATA_BE");
         $headers = [
             'api_id' => env("API_ID"),
             'api_key' => env("API_KEY"),
         ];
-        $response = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
-        return view('add-declaration-particuliere',['attestation'=>$response,'id'=>$id]);
+        $response = Http::withHeaders($headers)->get("$baseUrl/".$request->id."/info")->json();
+        return view('add-declaration-particuliere',['attestation'=>$response,'id'=>$request->id]);
     }
 
     /**
@@ -90,7 +90,7 @@ class DeclarationParticuliereController extends Controller
         ];
         $responseBeforeEdited = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
         $responseBeforeEdited["identifier"] = isset($request->num_entreprise) ? $request->num_entreprise : null;
-        $responseBeforeEdited['denomination'] = isset($request->denomation_sociale) ? $request->denomation_sociale : null;
+        $responseBeforeEdited['addresses'][0]['full_address'] = isset($request->denomation_sociale) ? $request->denomation_sociale : null;
         $responseBeforeEdited["juridical_form"]['code'] = isset($request->forme_legale) ? $request->forme_legale : null;
         $responseBeforeEdited["juridical_situation"]['code'] = isset($request->siege_social) ? $request->siege_social : null;
         $responseBeforeEdited["company_name"] = isset($request->representer_par) ? $request->representer_par : null;
@@ -138,7 +138,7 @@ class DeclarationParticuliereController extends Controller
         ];
         $responseBeforeEdited = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
         $responseBeforeEdited["identifier"] = isset($request->num_entreprise) ? $request->num_entreprise : null;
-        $responseBeforeEdited['denomination'] = isset($request->denomation_sociale) ? $request->denomation_sociale : null;
+        $responseBeforeEdited['addresses'][0]['full_address'] = isset($request->denomation_sociale) ? $request->denomation_sociale : null;
         $responseBeforeEdited["juridical_form"]['code'] = isset($request->forme_legale) ? $request->forme_legale : null;
         $responseBeforeEdited["juridical_situation"]['code'] = isset($request->siege_social) ? $request->siege_social : null;
         $responseBeforeEdited["company_name"] = isset($request->representer_par) ? $request->representer_par : null;

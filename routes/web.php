@@ -35,7 +35,7 @@ Route::get('/attestation-didentile/{id}/print',[AttestationDidentileController::
 
 
 Route::get('/declaration-particuliere',[DeclarationParticuliereController::class,'index'])->name('declaration-particuliere');
-Route::get('/declaration-particuliere/{id}/edit',[DeclarationParticuliereController::class,'edit'])->name('declaration-particuliere.edit');
+Route::post('/declaration-particuliere/edit',[DeclarationParticuliereController::class,'edit'])->name('declaration-particuliere.edit');
 Route::post('/declaration-particuliere/store',[DeclarationParticuliereController::class,'store'])->name('declaration-particuliere.store');
 Route::get('/declaration-particuliere/{id}/print',[DeclarationParticuliereController::class,'print'])->name('declaration-particuliere.print-pdf');
 Route::get('/declaration-particuliere/{id}',[DeclarationParticuliereController::class,'afficher_pdf'])->name('declaration-particuliere.show-pdf');

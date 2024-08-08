@@ -34,8 +34,17 @@
                                         {{-- <p class="text-muted mb-2 card-sub-title">The world’s most popular and easiest to use icon set just got an upgrade. More icons, More styles, More</p> --}}
                                     </div>
 								</div>
+                                <form action="{{route('declaration-particuliere.edit')}}" method="POST">
+                                    @csrf
                                 <div class="table-responsive">
-									<table class="table text-md-nowrap" id="example1">
+                                    <div class="row">
+                                        <div class="parsley-input my-2 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                            <label>N° d’entreprise : <span class="tx-danger">*</span></label>
+                                            <input class="form-control" data-parsley-class-handler="#lnWrapper" name="id" placeholder="Entrer le N° d’entreprise"  type="text">
+                                        </div>
+                                        <button class="btn btn-primary text-white col-md-12 my-4">Search</button>
+                                    </div>
+									{{-- <table class="table text-md-nowrap" id="example1">
 										<thead>
 											<tr>
 												<th class="wd-15p border-bottom-0">Numéro d’entreprise</th>
@@ -68,8 +77,9 @@
                                             @endforeach
 										</tbody>
 									</table>
-								</div>
+								</div> --}}
 							</div>
+                        </form>
 						</div>
 						<!-- /card -->
 @endsection

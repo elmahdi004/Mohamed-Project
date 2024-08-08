@@ -38,7 +38,7 @@
                                                             </div>
                                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                 <label>Dénomination sociale : <span class="tx-danger">*</span></label>
-                                                                <input class="form-control" value="{{isset($attestation['denomination']) ? $attestation['denomination'] : ''}}" data-parsley-class-handler="#lnWrapper" name="denomation_sociale" placeholder="Entrer la Dénomination sociale"  type="text">
+                                                                <input class="form-control" value="{{isset($attestation['addresses'][0]['full_address']) ? $attestation['addresses'][0]['full_address'] : ''}}" data-parsley-class-handler="#lnWrapper" name="denomation_sociale" placeholder="Entrer la Dénomination sociale"  type="text">
                                                             </div>
                                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                                 <label>Forme légale : <span class="tx-danger">*</span></label>
