@@ -30,13 +30,21 @@
 							<div class="card-body">
 								<div class="d-flex justify-content-between">
                                     <div>
-                                        <h6 class="card-title mb-1">Tableau de Formulaire 1</h6>
+                                        <h6 class="card-title mb-1">Formulaire 1</h6>
                                         {{-- <p class="text-muted mb-2 card-sub-title">The world’s most popular and easiest to use icon set just got an upgrade. More icons, More styles, More</p> --}}
                                     </div>
-                                        <div class="col-sm-6 col-md-3 mg-t-10 mg-md-t-0"><a href="{{route('declaration-particuliere.create')}}" class="btn btn-success btn-with-icon btn-block text-white"><i class="typcn typcn-edit mx-1"></i> Ajouter</a></div>
 								</div>
+                                <form action="{{route('formulaire.edit')}}" method="POST">
+                                    @csrf
                                 <div class="table-responsive">
-									<table class="table text-md-nowrap" id="example1">
+                                    <div class="row">
+                                        <div class="parsley-input my-2 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                            <label>N° d’entreprise : <span class="tx-danger">*</span></label>
+                                            <input class="form-control" data-parsley-class-handler="#lnWrapper" name="id" placeholder="Entrer le N° d’entreprise"  type="text">
+                                        </div>
+                                        <button class="btn btn-primary text-white col-md-12 my-4">Search</button>
+                                    </div>
+									{{-- <table class="table text-md-nowrap" id="example1">
 										<thead>
 											<tr>
 												<th class="wd-15p border-bottom-0">Numéro d’entreprise</th>
@@ -48,30 +56,30 @@
 											</tr>
 										</thead>
 										<tbody>
-                                            {{-- @foreach ($declarations as $declaration)
+                                            @foreach ($declarations as $declaration)
 											<tr>
-												<td>{{$declaration->num_entreprise}}</td>
-												<td>{{$declaration->denomation_sociale}}</td>
-												<td>{{$declaration->forme_legale}}</td>
-												<td>{{$declaration->siege_social}}</td>
-												<td>{{$declaration->representer_par}}</td>
+												<td>{{$declaration['identifier']}}</td>
+												<td>xxx</td>
+												<td>{{$declaration['juridical_form']['code']}}</td>
+												<td>{{$declaration['juridical_situation']['code']}}</td>
+												<td>{{$declaration['company_name']}}</td>
 												<td>
                                                     <div class="dropdown">
                                                         <button data-toggle="dropdown" style="max-width: 100px" class="btn btn-primary btn-sm btn-block d-flex justify-content-center align-items-center">ACTIONS<i class="icon ion-ios-arrow-down mx-1 tx-11 mg-l-3"></i></button>
                                                         <div  class="dropdown-menu tx-13">
-                                                            <a href="{{route('declaration-particuliere.print-pdf',['id'=>$declaration->id])}}" class="dropdown-item">Print</a>
-                                                            <a href="{{route('declaration-particuliere.show-pdf',['id'=>$declaration->id])}}" class="dropdown-item">Afficher</a>
-                                                            <a href="" class="dropdown-item">Edit</a>
-                                                            <a href="" class="dropdown-item">Delete</a>
+                                                            <a href="{{route('declaration-particuliere.print-pdf',['id'=>$declaration['identifier']])}}" class="dropdown-item">Print</a>
+                                                            <a href="{{route('declaration-particuliere.show-pdf',['id'=>$declaration['identifier']])}}" class="dropdown-item">Afficher</a>
+                                                            <a href="{{route('declaration-particuliere.edit',['id'=>$declaration['identifier']])}}" class="dropdown-item">Edit</a>
                                                         </div>
                                                     </div>       
                                                 </td>
 											</tr>
-                                            @endforeach --}}
+                                            @endforeach
 										</tbody>
 									</table>
-								</div>
+								</div> --}}
 							</div>
+                        </form>
 						</div>
 						<!-- /card -->
 @endsection

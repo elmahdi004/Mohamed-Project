@@ -45,9 +45,10 @@ Route::post('/declaration-particuliere/{id}/update-print',[DeclarationParticulie
 
 Route::get('/formulaire',[Formulaire1Controller::class,'index'])->name('formulaire');
 Route::get('/formulaire/add',[Formulaire1Controller::class,'create'])->name('formulaire.create');
-Route::post('/formulaire/update',[Formulaire1Controller::class,'update'])->name('formulaire.update');
-Route::get('/formulaire/{id}/print',[Formulaire1Controller::class,'print'])->name('formulaire.print-pdf');
+Route::post('/formulaire/{id}/update',[Formulaire1Controller::class,'update'])->name('formulaire.update');
+Route::post('/formulaire/edit',[Formulaire1Controller::class,'edit'])->name('formulaire.edit');
 Route::get('/formulaire/{id}',[Formulaire1Controller::class,'afficher_pdf'])->name('formulaire.show-pdf');
+Route::post('/formulaire/{id}/update-print',[Formulaire1Controller::class,'updatePrint'])->name('formulaire.update-print');
 
 
 
@@ -55,3 +56,116 @@ Route::get('/{page}', [AdminController::class,'index']);
 // Route::get('/pdf',function(){
 //     return view('templates.attestation-didentite-modele-1');
 // });
+
+
+
+
+
+
+// {
+//     "_token": "rvaZjwKFYV1zo6lv8DvatgsoftZ2LkRl7d8AmmzN",
+//     "nom_prenom": "BE931363514",
+//     "nom": "VOLVO",
+//     "forme_legal": "453",
+//     "siege": null,
+//     "rue": null,
+//     "n": null,
+//     "boite": null,
+//     "code_postal": null,
+//     "localite": null,
+//     "pays": null,
+//     "data": [
+//     {
+//     "nom": null,
+//     "num_entreprise": null
+//     },
+//     {
+//     "nom": null,
+//     "num_entreprise": null
+//     },
+//     {
+//     "nom": null,
+//     "num_entreprise": null
+//     }
+//     ],
+//     "langue_de_facturation": null,
+//     "nom_facturation": null,
+//     "service": null,
+//     "destinataire": null,
+//     "facturation_rue": null,
+//     "facturation_boite": null,
+//     "facturation_n": null,
+//     "facturation_code_postal": null,
+//     "facturation_localite": null,
+//     "facturation_pays": null,
+//     "b_num_entreprise": "VOLVO",
+//     "nom_entier": "Goteborg",
+//     "nom_abrege": "BE931363514",
+//     "b_form_legale": null,
+//     "b_address": null,
+//     "device": "VOLVO",
+//     "montant": "VOLVO",
+//     "b_date": "VOLVO",
+//     "arrive_du_terme": "VOLVO",
+//     "admin": [
+//     {
+//     "numero": "Goteborg",
+//     "nom": "Goteborg",
+//     "qualite": "Goteborg",
+//     "date": "Goteborg"
+//     },
+//     {
+//     "nom": "Goteborg",
+//     "numero": "Goteborg",
+//     "qualite": "Goteborg",
+//     "date": "Goteborg"
+//     },
+//     {
+//     "numero": "Goteborg",
+//     "nom": "Goteborg",
+//     "qualite": "Goteborg",
+//     "date": "Goteborg"
+//     },
+//     {
+//     "numero": "Goteborg",
+//     "nom": "Goteborg",
+//     "qualite": "Goteborg",
+//     "date": "Goteborg"
+//     }
+//     ],
+//     "gestion": [
+//     {
+//     "numero": "Goteborg",
+//     "nom": "Goteborg",
+//     "qualite": "Goteborg",
+//     "date": "Goteborg"
+//     },
+//     {
+//     "date": "Goteborg",
+//     "numero": "Goteborg",
+//     "nom": "Goteborg",
+//     "qualite": "Goteborg"
+//     },
+//     {
+//     "date": "Goteborg",
+//     "numero": "Goteborg",
+//     "nom": "Goteborg",
+//     "qualite": "Goteborg"
+//     },
+//     {
+//     "numero": "Goteborg",
+//     "nom": "Goteborg",
+//     "qualite": "Goteborg",
+//     "date": "Goteborg"
+//     }
+//     ],
+//     "exercice_social": "Goteborg",
+//     "assemblee_generale": "Goteborg",
+//     "c_nom_registre": "Goteborg",
+//     "numero_identification": "Goteborg",
+//     "email": "Goteborg",
+//     "site": "Goteborg",
+//     "signature_nom": "Goteborg",
+//     "signature_fait_a": "Goteborg",
+//     "signature_le": "1985-12-31"
+//     }
