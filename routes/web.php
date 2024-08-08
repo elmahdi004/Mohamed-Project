@@ -45,7 +45,7 @@ Route::post('/declaration-particuliere/{id}/update-print',[DeclarationParticulie
 
 Route::get('/formulaire',[Formulaire1Controller::class,'index'])->name('formulaire');
 Route::get('/formulaire/add',[Formulaire1Controller::class,'create'])->name('formulaire.create');
-Route::post('/formulaire/store',[Formulaire1Controller::class,'store'])->name('formulaire.store');
+Route::post('/formulaire/update',[Formulaire1Controller::class,'update'])->name('formulaire.update');
 Route::get('/formulaire/{id}/print',[Formulaire1Controller::class,'print'])->name('formulaire.print-pdf');
 Route::get('/formulaire/{id}',[Formulaire1Controller::class,'afficher_pdf'])->name('formulaire.show-pdf');
 

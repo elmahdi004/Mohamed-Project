@@ -50,9 +50,9 @@ class Formulaire1Controller extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Formulaire1 $formulaire1)
+    public function update(Request $request)
     {
-        //
+        return $request;
     }
 
     /**
