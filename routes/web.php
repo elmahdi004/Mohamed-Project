@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AttestationDidentileController;
 use App\Http\Controllers\DeclarationParticuliereController;
 use App\Http\Controllers\Formulaire1Controller;
+use App\Http\Controllers\Formulaire2Controller;
 use App\Models\DeclarationParticuliere;
 use Illuminate\Support\Facades\Route;
 use Spatie\FlareClient\View;
@@ -49,6 +50,13 @@ Route::post('/formulaire/{id}/update',[Formulaire1Controller::class,'update'])->
 Route::post('/formulaire/edit',[Formulaire1Controller::class,'edit'])->name('formulaire.edit');
 Route::get('/formulaire/{id}',[Formulaire1Controller::class,'afficher_pdf'])->name('formulaire.show-pdf');
 Route::post('/formulaire/{id}/update-print',[Formulaire1Controller::class,'updatePrint'])->name('formulaire.update-print');
+
+Route::get('/formulaire2',[Formulaire2Controller::class,'index'])->name('formulaire2');
+Route::get('/formulaire2/add',[Formulaire2Controller::class,'create'])->name('formulaire2.create');
+Route::post('/formulaire2/{id}/update',[Formulaire2Controller::class,'update'])->name('formulaire2.update');
+Route::post('/formulaire2/edit',[Formulaire2Controller::class,'edit'])->name('formulaire2.edit');
+Route::get('/formulaire2/{id}',[Formulaire2Controller::class,'afficher_pdf'])->name('formulaire2.show-pdf');
+Route::post('/formulaire2/{id}/update-print',[Formulaire2Controller::class,'updatePrint'])->name('formulaire2.update-print');
 
 
 
