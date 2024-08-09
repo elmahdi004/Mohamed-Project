@@ -319,7 +319,7 @@
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Adresse e-mail (6) : <span class="tx-danger">*</span></label>
-                                                <input value="{{isset($attestation['email']) ? $attestation['email'] : ''}} class="form-control" data-parsley-class-handler="#lnWrapper" name="email" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['email']) ? $attestation['email'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="email" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Site internet (6) : <span class="tx-danger">*</span></label>

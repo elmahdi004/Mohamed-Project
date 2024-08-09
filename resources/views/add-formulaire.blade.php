@@ -58,7 +58,7 @@
                                             </div>
                                             <div class="parsley-input my-2 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Siège(s) ou succursale : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="siege" placeholder="Siège(s) ou succursale"  type="text">
+                                                <input value="{{isset($attestation['juridical_situation']['code']) ? $attestation['juridical_situation']['code'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="siege" placeholder="Siège(s) ou succursale"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-5 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Rue : <span class="tx-danger">*</span></label>
@@ -66,7 +66,7 @@
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>N° : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="n" placeholder="N°"  type="text">
+                                                <input value="{{isset($attestation['addresses'][0]['street']) ? $attestation['addresses'][0]['street'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="n" placeholder="N°"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-4 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Boîte : <span class="tx-danger">*</span></label>
@@ -74,92 +74,92 @@
                                             </div>
                                             <div class="parsley-input my-4 col-md-4 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Code postal : <span class="tx-danger">*</span></label>
-                                                <input value="{{isset($attestation['addresses'][0]['zip_code']) ? $attestation['addresses'][0]['zip_code'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="code_postal" placeholder="Entrer le Code postal"  type="text">
+                                                <input value="{{isset($attestation['addresses'][0]['street']) ? $attestation['addresses'][0]['street'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="code_postal" placeholder="Entrer le Code postal"  type="text">
                                             </div>
                                             <div class="parsley-input my-4 col-md-8 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Localité : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="localite" placeholder="Entrer la Localité"  type="text">
+                                                <input value="{{isset($attestation['addresses'][0]['street']) ? $attestation['addresses'][0]['street'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="localite" placeholder="Entrer la Localité"  type="text">
                                             </div>
                                             <div class="parsley-input my-4 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Pays : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="pays" placeholder="Entrer le Pays"  type="text">
+                                                <input value="{{isset($attestation['addresses'][0]['street']) ? $attestation['addresses'][0]['street'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="pays" placeholder="Entrer le Pays"  type="text">
                                             </div>
                                             <p class="my-3">Si la constitution est la conséquence d'une fusion/scission (*), indiquer le nom et le numéro d'entreprise des personnes morales fusionnées/scindées (*)</p>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="data[0][nom]" placeholder="Entrer la Localité"  type="text">
+                                                <input value="{{isset($attestation['data'][0]['nom']) ? $attestation['data'][0]['nom'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="data[0][nom]" placeholder="Entrer la Localité"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>N° d’entreprise : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="data[0][num_entreprise]" placeholder="Entrer le Pays"  type="text">
+                                                <input value="{{isset($attestation['data'][0]['num_entreprise']) ? $attestation['data'][0]['num_entreprise'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="data[0][num_entreprise]" placeholder="Entrer le Pays"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="data[1][nom]" placeholder="Entrer la Localité"  type="text">
+                                                <input value="{{isset($attestation['data'][1]['nom']) ? $attestation['data'][1]['nom'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="data[1][nom]" placeholder="Entrer la Localité"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>N° d’entreprise : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="data[1][num_entreprise]" placeholder="Entrer le Pays"  type="text">
+                                                <input value="{{isset($attestation['data'][1]['num_entreprise']) ? $attestation['data'][1]['num_entreprise'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="data[1][num_entreprise]" placeholder="Entrer le Pays"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="data[2][nom]" placeholder="Entrer la Localité"  type="text">
+                                                <input value="{{isset($attestation['data'][2]['nom']) ? $attestation['data'][2]['nom'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="data[2][nom]" placeholder="Entrer la Localité"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>N° d’entreprise : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="data[2][num_entreprise]" placeholder="Entrer le Pays"  type="text">
+                                                <input value="{{isset($attestation['data'][2]['num_entreprise']) ? $attestation['data'][2]['num_entreprise'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="data[2][num_entreprise]" placeholder="Entrer le Pays"  type="text">
                                             </div>
                                             <p class="my-2 col-md-12">FACTURE : Les frais de publication doivent être réglés au préalable par virement ou chèque. </p>
                                             <div class="mt-4 mb-2 col-md-6">
                                                 <label class="ckbox"><input type="checkbox" name="adresse_facturation"><span>Adresse de facturation différente (compléter ci-dessous)</span></label>
                                             </div>
                                             <div class="col-md-6 mt-4 mb-2">
-                                                <label class="ckbox"><input type="checkbox" name="facture_siege"><span>Facture au siège PM</span></label>
+                                                <label value="{{isset($attestation['addresses'][0]['street']) ? $attestation['addresses'][0]['street'] : ''}}" class="ckbox"><input type="checkbox" name="facture_siege"><span>Facture au siège PM</span></label>
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Langue de facturation : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="langue_de_facturation" placeholder="Entrer la Langue de facturation"  type="text">
+                                                <input value="{{isset($attestation['langue_de_facturation']) ? $attestation['langue_de_facturation'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="langue_de_facturation" placeholder="Entrer la Langue de facturation"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="nom_facturation" placeholder="Entrer le nom"  type="text">
+                                                <input value="{{isset($attestation['nom_facturation']) ? $attestation['nom_facturation'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="nom_facturation" placeholder="Entrer le nom"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Service : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="service" placeholder="Entrer la service"  type="text">
+                                                <input value="{{isset($attestation['service']) ? $attestation['service'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="service" placeholder="Entrer la service"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Destinataire : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="destinataire" placeholder="Entrer la destinataire"  type="text">
+                                                <input value="{{isset($attestation['destinataire']) ? $attestation['destinataire'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="destinataire" placeholder="Entrer la destinataire"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Rue : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_rue" placeholder="Entrer le Rue"  type="text">
+                                                <input value="{{isset($attestation['facturation_rue']) ? $attestation['facturation_rue'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_rue" placeholder="Entrer le Rue"  type="text">
                                             </div>
                                             
                                             <div class="parsley-input my-2 col-md-4 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Boîte : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_boite" placeholder="Boîte"  type="text">
+                                                <input value="{{isset($attestation['facturation_boite']) ? $attestation['facturation_boite'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_boite" placeholder="Boîte"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-4 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>N° TVA° : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_n" placeholder="N°"  type="text">
+                                                <input value="{{isset($attestation['facturation_n']) ? $attestation['facturation_n'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_n" placeholder="N°"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-4 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>N° : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_code_postal" placeholder="Entrer le Code postal"  type="text">
+                                                <input value="{{isset($attestation['facturation_n']) ? $attestation['facturation_n'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_code_postal" placeholder="Entrer le Code postal"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-4 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Code postal : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_code_postal" placeholder="Entrer le Code postal"  type="text">
+                                                <input value="{{isset($attestation['facturation_code_postal']) ? $attestation['facturation_code_postal'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_code_postal" placeholder="Entrer le Code postal"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-8 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Localité : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_localite" placeholder="Entrer la Localité"  type="text">
+                                                <input value="{{isset($attestation['facturation_localite']) ? $attestation['facturation_localite'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_localite" placeholder="Entrer la Localité"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>E-mail : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_pays" placeholder="Entrer le Pays"  type="text">
+                                                <input value="{{isset($attestation['facturation_localite']) ? $attestation['facturation_localite'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="facturation_pays" placeholder="Entrer le Pays"  type="text">
                                             </div>
                                         </div>
 									</section>
@@ -168,23 +168,23 @@
                                         <div class="row">
                                             <div class="parsley-input my-2 col-md-12" id="fnWrapper">
                                                 <label>N° d’entreprise : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#fnWrapper" name="b_num_entreprise" placeholder="Entrer le nom et prénom"  type="text" value="@isset($attestation['company_name']){{$attestation['company_name']}}@endisset">
+                                                <input value="{{isset($attestation['b_num_entreprise']) ? $attestation['b_num_entreprise'] : ''}}" class="form-control" data-parsley-class-handler="#fnWrapper" name="b_num_entreprise" placeholder="Entrer le nom et prénom"  type="text" value="@isset($attestation['company_name']){{$attestation['company_name']}}@endisset">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom (en entier) : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="nom_entier" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['nom_entier']) ? $attestation['nom_entier'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="nom_entier" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom (en abrégé) : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="nom_abrege" placeholder="Entrer le n° de registre national"  type="text" value="{{ isset($attestation['identifier']) ? $attestation['identifier'] : '' }}">
+                                                <input value="{{isset($attestation['nom_abrege']) ? $attestation['nom_abrege'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="nom_abrege" placeholder="Entrer le n° de registre national"  type="text" value="{{ isset($attestation['identifier']) ? $attestation['identifier'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Forme légale : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="b_form_legale" placeholder="Domicilié(e) à"  type="text">
+                                                <input value="{{isset($attestation['b_form_legale']) ? $attestation['b_form_legale'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="b_form_legale" placeholder="Domicilié(e) à"  type="text">
                                             </div>
                                             <div class="parsley-input my-2 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Adresse complète du siège : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="b_address" placeholder="Domicilié(e) à"  type="text">
+                                                <input value="{{isset($attestation['b_address']) ? $attestation['b_address'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="b_address" placeholder="Domicilié(e) à"  type="text">
                                             </div>
                                         </div>
 									</section>
@@ -194,19 +194,19 @@
                                             <p class="my-3 col-md-12">Montant du capital (montant minimum pour les sociétés d’investissement)   (le cas échéant)</p>
                                             <div class="parsley-input my-2 col-md-6" id="fnWrapper">
                                                 <label>Devise : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#fnWrapper" name="device" placeholder="Entrer le nom et prénom"  type="text" value="@isset($attestation['company_name']){{$attestation['company_name']}}@endisset">
+                                                <input value="{{isset($attestation['device']) ? $attestation['device'] : ''}}" class="form-control" data-parsley-class-handler="#fnWrapper" name="device" placeholder="Entrer le nom et prénom"  type="text" value="@isset($attestation['company_name']){{$attestation['company_name']}}@endisset">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6" id="fnWrapper">
                                                 <label>Montant : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#fnWrapper" name="montant" placeholder="Entrer le nom et prénom"  type="text" value="@isset($attestation['company_name']){{$attestation['company_name']}}@endisset">
+                                                <input value="{{isset($attestation['montant']) ? $attestation['montant'] : ''}}" class="form-control" data-parsley-class-handler="#fnWrapper" name="montant" placeholder="Entrer le nom et prénom"  type="text" value="@isset($attestation['company_name']){{$attestation['company_name']}}@endisset">
                                             </div>
                                             <div class="parsley-input my-2 col-md-12" id="fnWrapper">
                                                 <label>Date de l’acte constitutif : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#fnWrapper" name="b_date" placeholder="Entrer le nom et prénom"  type="text" value="@isset($attestation['company_name']){{$attestation['company_name']}}@endisset">
+                                                <input value="{{isset($attestation['b_date']) ? $attestation['b_date'] : ''}}" class="form-control" data-parsley-class-handler="#fnWrapper" name="b_date" placeholder="Entrer le nom et prénom"  type="text" value="@isset($attestation['company_name']){{$attestation['company_name']}}@endisset">
                                             </div>
                                             <div class="parsley-input my-2 col-md-12" id="fnWrapper">
                                                 <label>Arrivée du terme : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#fnWrapper" name="arrive_du_terme" placeholder="Entrer le nom et prénom"  type="text" value="@isset($attestation['company_name']){{$attestation['company_name']}}@endisset">
+                                                <input value="{{isset($attestation['arrive_du_terme']) ? $attestation['arrive_du_terme'] : ''}}" class="form-control" data-parsley-class-handler="#fnWrapper" name="arrive_du_terme" placeholder="Entrer le nom et prénom"  type="text" value="@isset($attestation['company_name']){{$attestation['company_name']}}@endisset">
                                             </div>
                                             {{-- <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                     <label>Date de naissance : <span class="tx-danger">*</span></label>
@@ -222,166 +222,166 @@
                                             <p class="my-3 col-md-12">Administration  et  représentation (le cas échéant  +  mention  du  représentant permanent de la personne morale et du représentant légal de la succursale) :</p>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Numéro (1): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[0][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][0]['numero']) ? $attestation['admin'][0]['numero'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[0][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom et prénom (1): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[0][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][0]['nom']) ? $attestation['admin'][0]['nom'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[0][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Qualité (1): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[0][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][0]['qualite']) ? $attestation['admin'][0]['qualite'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[0][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Date (1): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[0][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][0]['date']) ? $attestation['admin'][0]['date'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[0][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Numéro (2): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[1][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][1]['numero']) ? $attestation['admin'][1]['numero'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[1][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom et prénom (2): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[1][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][1]['nom']) ? $attestation['admin'][1]['nom'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[1][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Qualité (2): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[1][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][1]['qualite']) ? $attestation['admin'][1]['qualite'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[1][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Date (2): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[1][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][1]['date']) ? $attestation['admin'][1]['date'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[1][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Numéro (3): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[2][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][2]['date']) ? $attestation['admin'][2]['numero'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[2][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom et prénom (3): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[2][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][2]['nom']) ? $attestation['admin'][2]['nom'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[2][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Qualité (3): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[2][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][2]['qualite']) ? $attestation['admin'][2]['qualite'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[2][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Date (3): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[2][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][2]['date']) ? $attestation['admin'][2]['date'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[2][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Numéro (4): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[3][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][3]['numero']) ? $attestation['admin'][3]['numero'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[3][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom et prénom (4): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[3][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][3]['nom']) ? $attestation['admin'][3]['nom'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[3][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Qualité (4): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[3][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][3]['qualite']) ? $attestation['admin'][3]['qualite'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[3][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Date (4): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[3][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['admin'][3]['date']) ? $attestation['admin'][3]['date'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="admin[3][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
 
                                             <p class="my-3 col-md-12">Gestion journalière :</p>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Numéro (1): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[0][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['gestion'][0]['numero']) ? $attestation['gestion'][0]['numero'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[0][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom et prénom (1): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[0][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['gestion'][0]['numero']) ? $attestation["gestion"][0]['nom'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[0][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Qualité (1): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[0][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["gestion"][0]['qualite']) ? $attestation["gestion"][0]['qualite'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[0][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Date (1): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[1][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["gestion"][0]['date']) ? $attestation["gestion"][0]['date'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[1][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Numéro (2): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[1][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["gestion"][1]['numero']) ? $attestation["gestion"][1]['numero'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[1][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom et prénom (2): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[1][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["gestion"][1]['nom']) ? $attestation["gestion"][1]['nom'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[1][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Qualité (2): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[1][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["gestion"][1]['qualite']) ? $attestation["gestion"][1]['qualite'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[1][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Date (2): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[2][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["gestion"][1]['date']) ? $attestation["gestion"][1]['date'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[2][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Numéro (3): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[2][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['gestion'][2]['numero']) ? $attestation['gestion'][2]['numero'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[2][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom et prénom (3): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[2][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["gestion"][2]['nom']) ? $attestation["gestion"][2]['nom'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[2][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Qualité (3): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[2][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["gestion"][2]['qualite']) ? $attestation["gestion"][2]['qualite'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[2][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Date (3): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[0][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["gestion"][2]['date']) ? $attestation["gestion"][2]['date'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[0][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Numéro (4): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[3][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['gestion'][3]['numero']) ? $attestation['gestion'][3]['numero'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[3][numero]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom et prénom (4): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[3][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["gestion"][3]['nom']) ? $attestation["gestion"][3]['nom'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[3][nom]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Qualité (4): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[3][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["gestion"][3]['qualite']) ? $attestation["gestion"][3]['qualite'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[3][qualite]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-3 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Date (4): <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[3][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["gestion"][3]['date']) ? $attestation["gestion"][3]['date'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="gestion[3][date]" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Exercice social (date de fin : JJ / MM) : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="exercice_social" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["exercice_social"]) ? $attestation["exercice_social"] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="exercice_social" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Assemblée générale ordinaire (6) : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="assemblee_generale" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["assemblee_generale"]) ? $attestation["assemblee_generale"] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="assemblee_generale" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom du registre : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="c_nom_registre" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation["c_nom_registre"]) ? $attestation["c_nom_registre"] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="c_nom_registre" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Numéro d’identification : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="numero_identification" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['numero_identification']) ? $attestation['numero_identification'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="numero_identification" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Adresse e-mail (6) : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="email" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['email']) ? $attestation['email'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="email" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Site internet (6) : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="site" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['site']) ? $attestation['site'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="site" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <p class="my-3">Signature formulaire :</p>
                                             <div class="parsley-input my-2 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="signature_nom" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['signature_nom']) ? $attestation['signature_nom'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="signature_nom" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Fait à : <span class="tx-danger">*</span></label>
-                                                <input class="form-control" data-parsley-class-handler="#lnWrapper" name="signature_fait_a" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
+                                                <input value="{{isset($attestation['signature_fait_a']) ? $attestation['signature_fait_a'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="signature_fait_a" placeholder="Entrer la ville de naissance"  type="text" value="{{ isset($attestation["addresses"][0]['municipality']) ? $attestation["addresses"][0]['municipality'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                     <label>Le : <span class="tx-danger">*</span></label>
@@ -390,7 +390,7 @@
                                                             <div class="input-group-text">
                                                                 <i class="typcn typcn-calendar-outline tx-24 lh--9 op-6"></i>
                                                             </div>
-                                                        </div><input class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="date" name="signature_le" value="{{ isset($attestation['company_names'][0]['start_date']) ? \Carbon\Carbon::parse($attestation['company_names'][0]['start_date'])->format('Y-m-d') : '' }}">
+                                                        </div><input value="{{isset($attestation['signature_le']) ? $attestation['signature_le'] : ''}}" class="form-control fc-datepicker" placeholder="MM/DD/YYYY" type="date" name="signature_le" value="{{ isset($attestation['company_names'][0]['start_date']) ? \Carbon\Carbon::parse($attestation['company_names'][0]['start_date'])->format('Y-m-d') : '' }}">
                                                 </div>   
                                             
                                             </div>

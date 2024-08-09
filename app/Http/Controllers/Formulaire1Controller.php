@@ -66,7 +66,7 @@ class Formulaire1Controller extends Controller
         ];
         $responseBeforeEdited = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
         $responseBeforeEdited["identifier"] = isset($request->nom_prenom) ? $request->nom_prenom : null;
-        $responseBeforeEdited["nom"] = isset($request->nom) ? $request->nom : null;
+        $responseBeforeEdited["company_name"] = isset($request->nom) ? $request->nom : null;
         $responseBeforeEdited['addresses'][0]['full_address'] = isset($request->denomation_sociale) ? $request->denomation_sociale : null;
         $responseBeforeEdited["juridical_form"]['code'] = isset($request->forme_legal) ? $request->forme_legal : null;
         $responseBeforeEdited["juridical_situation"]['code'] = isset($request->siege_social) ? $request->siege_social : null;
@@ -80,6 +80,7 @@ class Formulaire1Controller extends Controller
         $responseBeforeEdited["langue_de_facturation"] = isset($request->langue_de_facturation) ? $request->langue_de_facturation : null;
         $responseBeforeEdited["nom_facturation"] = isset($request->nom_facturation) ? $request->nom_facturation : null;
         $responseBeforeEdited["service"] = isset($request->service) ? $request->service : null;
+        $responseBeforeEdited["destinataire"] = isset($request->destinataire) ? $request->destinataire : null;
         $responseBeforeEdited["facturation_rue"] = isset($request->facturation_rue) ? $request->facturation_rue : null;
         $responseBeforeEdited["facturation_boite"] = isset($request->facturation_boite) ? $request->facturation_boite : null;
         $responseBeforeEdited["facturation_n"] = isset($request->facturation_n) ? $request->facturation_n : null;
@@ -166,9 +167,8 @@ class Formulaire1Controller extends Controller
             'api_key' => env("API_KEY"),
         ];
         $responseBeforeEdited = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
-        $responseBeforeEdited = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
         $responseBeforeEdited["identifier"] = isset($request->nom_prenom) ? $request->nom_prenom : null;
-        $responseBeforeEdited["nom"] = isset($request->nom) ? $request->nom : null;
+        $responseBeforeEdited["company_name"] = isset($request->nom) ? $request->nom : null;
         $responseBeforeEdited['addresses'][0]['full_address'] = isset($request->denomation_sociale) ? $request->denomation_sociale : null;
         $responseBeforeEdited["juridical_form"]['code'] = isset($request->forme_legal) ? $request->forme_legal : null;
         $responseBeforeEdited["juridical_situation"]['code'] = isset($request->siege_social) ? $request->siege_social : null;
@@ -182,6 +182,7 @@ class Formulaire1Controller extends Controller
         $responseBeforeEdited["langue_de_facturation"] = isset($request->langue_de_facturation) ? $request->langue_de_facturation : null;
         $responseBeforeEdited["nom_facturation"] = isset($request->nom_facturation) ? $request->nom_facturation : null;
         $responseBeforeEdited["service"] = isset($request->service) ? $request->service : null;
+        $responseBeforeEdited["destinataire"] = isset($request->destinataire) ? $request->destinataire : null;
         $responseBeforeEdited["facturation_rue"] = isset($request->facturation_rue) ? $request->facturation_rue : null;
         $responseBeforeEdited["facturation_boite"] = isset($request->facturation_boite) ? $request->facturation_boite : null;
         $responseBeforeEdited["facturation_n"] = isset($request->facturation_n) ? $request->facturation_n : null;
