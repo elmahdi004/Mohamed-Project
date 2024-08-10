@@ -395,8 +395,8 @@
                                             
                                             </div>
                                         </div>
-                                        <button class="btn btn-main-primary pd-x-20" formaction="{{route('formulaire.update',['id'=>$id])}}" type="submit">Afficher</button>
-                                        <button class="btn btn-main-primary pd-x-20" formaction="{{route('formulaire.update-print',['id'=>$id])}}" type="submit">Print</button>
+                                        <button class="btn btn-main-primary pd-x-20 my-3" formaction="{{route('formulaire.update',['id'=>$id])}}" type="submit">Afficher</button>
+                                        <button class="btn btn-main-primary pd-x-20 my-3" formaction="{{route('formulaire.update-print',['id'=>$id])}}" type="submit">Print</button>
 									</section>
 								</div>
                             </form>

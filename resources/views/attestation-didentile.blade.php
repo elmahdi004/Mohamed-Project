@@ -40,7 +40,7 @@
                                     <div class="row">
                                         <div class="parsley-input my-2 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
                                             <label>N° d’entreprise : <span class="tx-danger">*</span></label>
-                                            <input class="form-control" data-parsley-class-handler="#lnWrapper" name="id" placeholder="Entrer le N° d’entreprise"  type="text">
+                                            <input class="form-control" data-parsley-class-handler="#lnWrapper" name="id" required placeholder="Entrer le N° d’entreprise"  type="text">
                                         </div>
                                         <button class="btn btn-primary text-white col-md-12 my-4">Search</button>
                                     </div>
