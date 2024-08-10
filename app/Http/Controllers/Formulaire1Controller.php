@@ -70,7 +70,6 @@ class Formulaire1Controller extends Controller
         $responseBeforeEdited['addresses'][0]['full_address'] = isset($request->denomation_sociale) ? $request->denomation_sociale : null;
         $responseBeforeEdited["juridical_form"]['code'] = isset($request->forme_legal) ? $request->forme_legal : null;
         $responseBeforeEdited["juridical_situation"]['code'] = isset($request->siege_social) ? $request->siege_social : null;
-        $responseBeforeEdited["company_name"] = isset($request->representer_par) ? $request->representer_par : null;
         $responseBeforeEdited["data"][0]['nom'] = isset($request->data[0]['nom']) ? $request->data[0]['nom'] : null;
         $responseBeforeEdited["data"][0]['num_entreprise'] = isset($request->data[0]['num_entreprise']) ? $request->data[0]['num_entreprise'] : null;
         $responseBeforeEdited["data"][1]['nom'] = isset($request->data[1]['nom']) ? $request->data[1]['nom'] : null;

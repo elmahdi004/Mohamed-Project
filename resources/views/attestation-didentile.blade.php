@@ -18,7 +18,7 @@
 				<div class="breadcrumb-header justify-content-between">
 					<div class="my-auto">
 						<div class="d-flex">
-							<h4 class="content-title mb-0 my-auto">Attestation Didentile</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ tableau de bord</span>
+							<h4 class="content-title mb-0 my-auto">Declaration Particuliere</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ tableau de bord</span>
 						</div>
 					</div>
 					
@@ -30,53 +30,22 @@
 							<div class="card-body">
 								<div class="d-flex justify-content-between">
                                     <div>
-                                        <h6 class="card-title mb-1">Tableau des attestations didentile</h6>
+                                        <h6 class="card-title mb-1">Declaration particuliere</h6>
                                         {{-- <p class="text-muted mb-2 card-sub-title">The world’s most popular and easiest to use icon set just got an upgrade. More icons, More styles, More</p> --}}
                                     </div>
-                                        {{-- <div class="col-sm-6 col-md-3 mg-t-10 mg-md-t-0"><a href="{{route('attestation-didentile.create')}}" class="btn btn-success btn-with-icon btn-block text-white"><i class="typcn typcn-edit mx-1"></i> Ajouter</a></div> --}}
 								</div>
+                                <form action="{{route('attestation-didentile.edit')}}" method="POST">
+                                    @csrf
                                 <div class="table-responsive">
-									<table class="table text-md-nowrap" id="example1">
-										<thead>
-											<tr>
-												<th class="wd-15p border-bottom-0">Nom et prénom</th>
-												<th class="wd-15p border-bottom-0">né(e) le - à</th>
-												<th class="wd-20p border-bottom-0">N° de registre national</th>
-												<th class="wd-15p border-bottom-0">Domicilié(e) à</th>
-												<th class="wd-10p border-bottom-0">Téléphone</th>
-												<th class="wd-25p border-bottom-0">Agissant pour la société</th>
-												<th class="wd-25p border-bottom-0">Agissant pour la société ou l’asbl</th>
-                                                <th class="wd-25p border-bottom-0">en qualité de</th>
-												<th class="wd-25p border-bottom-0">Actions</th>
-											</tr>
-										</thead>
-										<tbody>
-                                            @foreach ($attestations as $attestation)
-											<tr>
-												<td>{{$attestation["company_name"]}}</td>
-												<td>{{$attestation["type"]["start_date"]}}</td>
-												<td>{{$attestation["identifier"]}}</td>
-												<td>{{$attestation["company_name"]}}</td>
-												<td>{{$attestation["phone_number"]}}</td>
-												<td>{{$attestation["company_name"]}}</td>
-												<td>{{$attestation["company_name"]}}</td>
-												<td>{{$attestation["company_name"]}}</td>
-												<td>
-                                                    <div class="dropdown">
-                                                        <button data-toggle="dropdown" class="btn btn-primary btn-sm btn-block d-flex justify-content-center align-items-center">ACTIONS<i class="icon ion-ios-arrow-down mx-1 tx-11 mg-l-3"></i></button>
-                                                        <div  class="dropdown-menu tx-13">
-                                                            <a href="{{route('attestation_didentile.print-pdf',['id'=>$attestation['identifier']])}}" class="dropdown-item">Print</a>
-                                                            <a href="{{route('attestation_didentile.show-pdf',['id'=>$attestation['identifier']])}}" class="dropdown-item">Afficher</a>
-                                                            <a href="{{route('attestation_didentile.edit',['id'=>$attestation['identifier']])}}" class="dropdown-item">Edit</a>
-                                                        </div>
-                                                    </div>       
-                                                </td>
-											</tr>
-                                            @endforeach
-										</tbody>
-									</table>
-								</div>
+                                    <div class="row">
+                                        <div class="parsley-input my-2 col-md-12 mg-t-20 mg-md-t-0" id="lnWrapper">
+                                            <label>N° d’entreprise : <span class="tx-danger">*</span></label>
+                                            <input class="form-control" data-parsley-class-handler="#lnWrapper" name="id" placeholder="Entrer le N° d’entreprise"  type="text">
+                                        </div>
+                                        <button class="btn btn-primary text-white col-md-12 my-4">Search</button>
+                                    </div>
 							</div>
+                        </form>
 						</div>
 						<!-- /card -->
 @endsection

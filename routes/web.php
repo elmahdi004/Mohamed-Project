@@ -25,7 +25,7 @@ Route::get('/', function () {
 });
 
 Route::get('/attestation-didentile',[AttestationDidentileController::class,'index'])->name('attestation-didentile');
-Route::get('/attestation-didentile/{id}/edit',[AttestationDidentileController::class,'edit'])->name('attestation_didentile.edit');
+Route::post('/attestation-didentile/edit',[AttestationDidentileController::class,'edit'])->name('attestation-didentile.edit');
 Route::get('/attestation-didentile/{id}',[AttestationDidentileController::class,'afficher_pdf'])->name('attestation_didentile.show-pdf');
 Route::post('/attestation-didentile/{id}/update',[AttestationDidentileController::class,'update'])->name('attestation-didentile.update');
 Route::post('/attestation-didentile/{id}/update-print',[AttestationDidentileController::class,'updatePrint'])->name('attestation-didentile.update-print');

@@ -41,11 +41,11 @@
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nom actuel : <span class="tx-danger">*</span></label>
-                                                <input value="{{isset($attestation['nom_actuel']) ? $attestation['nom_actuel'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="nom_actuel" placeholder="Entrer le Nom"  type="text" value="{{ isset($attestation['identifier']) ? $attestation['identifier'] : '' }}">
+                                                <input value="{{isset($attestation['company_name']) ? $attestation['company_name'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="nom_actuel" placeholder="Entrer le Nom"  type="text" value="{{ isset($attestation['identifier']) ? $attestation['identifier'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Nouveau nom : <span class="tx-danger">*</span></label>
-                                                <input value="{{isset($attestation['nom_nv']) ? $attestation['nom_nv'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="nom_nv" placeholder="Entrer le Nom"  type="text" value="{{ isset($attestation['identifier']) ? $attestation['identifier'] : '' }}">
+                                                <input value="{{isset($attestation['company_name']) ? $attestation['company_name'] : ''}}" class="form-control" data-parsley-class-handler="#lnWrapper" name="nom_nv" placeholder="Entrer le Nom"  type="text" value="{{ isset($attestation['identifier']) ? $attestation['identifier'] : '' }}">
                                             </div>
                                             <div class="parsley-input my-2 col-md-6 mg-t-20 mg-md-t-0" id="lnWrapper">
                                                 <label>Sigle éventuel : <span class="tx-danger">*</span></label>

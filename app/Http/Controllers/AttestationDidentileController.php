@@ -13,21 +13,7 @@ class AttestationDidentileController extends Controller
      */
     public function index()
     {
-        $baseUrl = env("DATA_BE");
-        $headers = [
-            'api_id' => env("API_ID"),
-            'api_key' => env("API_KEY"),
-        ];
-    
-        // Making API requests
-        $response1 = Http::withHeaders($headers)->get("$baseUrl/201552538/info")->json();
-        $response2 = Http::withHeaders($headers)->get("$baseUrl/202239951/info")->json();
-        $response3 = Http::withHeaders($headers)->get("$baseUrl/403170701/info")->json();
-    
-        // Collect responses
-        $data = [$response1, $response2, $response3];
-        // return $data[0];
-        return view('attestation-didentile', ['attestations' => $data]);
+        return view('attestation-didentile');
     }
     
     
@@ -42,12 +28,12 @@ class AttestationDidentileController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        $attestations = AttestationDidentile::all();
-        AttestationDidentile::create($request->all());
-        return view('attestation-didentile',['attestations'=>$attestations]);
-    }
+    // public function store(Request $request)
+    // {
+    //     $attestations = AttestationDidentile::all();
+    //     AttestationDidentile::create($request->all());
+    //     return view('attestation-didentile',['attestations'=>$attestations]);
+    // }
 
     /**
      * Display the specified resource.
@@ -60,15 +46,15 @@ class AttestationDidentileController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
         $baseUrl = env("DATA_BE");
         $headers = [
             'api_id' => env("API_ID"),
             'api_key' => env("API_KEY"),
         ];
-        $response = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
-        return view('add-attestation-didentile',['attestation'=>$response,'id'=>$id]);
+        $response = Http::withHeaders($headers)->get("$baseUrl/".$request->id."/info")->json();
+        return view('add-attestation-didentile',['attestation'=>$response,'id'=>$request->id]);
     }
 
     /**
@@ -123,24 +109,7 @@ class AttestationDidentileController extends Controller
     {
         //
     }
-    public function afficher_pdf($id){
-        $baseUrl = env("DATA_BE");
-        $headers = [
-            'api_id' => env("API_ID"),
-            'api_key' => env("API_KEY"),
-        ];
-        $response = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
-        return view('templates.attestation-didentite-modele-1',['attestation'=>$response]);
-    }
-    public function print($id){
-        $baseUrl = env("DATA_BE");
-        $headers = [
-            'api_id' => env("API_ID"),
-            'api_key' => env("API_KEY"),
-        ];
-        $response = Http::withHeaders($headers)->get("$baseUrl/".$id."/info")->json();
-        return view('attestation-didentile-print',['attestation'=>$response]);
-    }
+
     public function updatePrint(Request $request,$id){
         $baseUrl = env("DATA_BE");
         $headers = [
